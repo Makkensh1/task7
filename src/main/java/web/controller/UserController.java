@@ -47,4 +47,16 @@ public class UserController {
         return "redirect:/";
     }
 
+    @PostMapping("/save")
+    public String saveEmployee(@ModelAttribute("user") User user) {
+        userServices.addUser(user);
+        return "redirect:/";
+    }
+    @GetMapping("/addnew")
+    public String addNewEmployee(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "newUser";
+    }
+
 }

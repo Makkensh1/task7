@@ -7,13 +7,16 @@ import java.util.List;
 
 public interface UserRepo {
 
-     void addUser(User user);
+    @Transactional
+    void addUser(User user);
 
-    List<User> listUsers();
+    List<User> getAllUsers();
+
+    User findByID(Long id);
 
     @Transactional
     void update(User user);
 
     @Transactional
-    void deleteUserById(Long id);
+    void deleteUser(User user);
 }

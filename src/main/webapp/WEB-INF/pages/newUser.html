@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1>User Management System</h1>
+    <hr>
+    <h2>Save user</h2>
+
+    <form action="#" th:action="@{/save}" th:object="${user}"
+          method="POST">
+        <input type="text" th:field="*{name}" >
+        <input type="text" th:field="*{email}">
+        <input type="text" th:field="*{lastName}">
+
+        <button type="submit" class="btn btn-info col-2">Save
+            user</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Back to user List</a>
+</div>
+</body>
+</html>

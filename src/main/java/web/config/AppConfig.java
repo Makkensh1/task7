@@ -38,7 +38,7 @@ public class AppConfig {
         vendorAdapter.setGenerateDdl(false);
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("java");
+        factory.setPackagesToScan("web");
         factory.setDataSource(getDataSource());
         return factory;
     }
