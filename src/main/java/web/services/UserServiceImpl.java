@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        return userRepo.findByID(id);
+        return userRepo.findUserByID(id);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void deleteUserById(Long id) {
-        userRepo.deleteUser(userRepo.findByID(id));
+        userRepo.deleteUser(userRepo.findUserByID(id));
     }
 
 }

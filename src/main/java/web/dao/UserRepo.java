@@ -12,7 +12,7 @@ public interface UserRepo {
 
     List<User> getAllUsers();
 
-    User findByID(Long id);
+    User findUserByID(Long id);
 
     @Transactional
     void update(User user);

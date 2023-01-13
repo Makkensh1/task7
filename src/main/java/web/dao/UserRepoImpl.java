@@ -25,20 +25,11 @@ public class UserRepoImpl implements UserRepo {
 
     @Override
     public List<User> getAllUsers() {
-        Query query = entityManager.createNativeQuery("select  * from users");
-        List<User> users = new ArrayList<>();
-        List<Object[]> results = query.getResultList();
-        results.stream().forEach(e -> System.out.println(e));
-        for (Object[] result : results) {
-            BigInteger id = (BigInteger) result[0];
-            users.add(new User((id.longValue()), (String) result[1], (String) result[2], (String) result[3]));
-        }
-        users.stream().forEach(e -> System.out.println(e));
-        return users;
+        return entityManager.createQuery("select u from User u",User.class).getResultList();
     }
 
     @Override
-    public User findByID(Long id) {
+    public User findUserByID(Long id) {
         return entityManager.find(User.class, id);
     }
 
